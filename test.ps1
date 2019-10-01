@@ -1,4 +1,6 @@
 param(
     $ArtifactsDirectory
 )
-$ArtifactsDirectory
+
+Set-Location $ArtifactsDirectory
+[System.Environment]::GetEnvironmentVariables()
