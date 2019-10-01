@@ -1,1 +1,4 @@
-write-host $(Build.ArtifactStagingDirectory)
+param(
+    $ArtifactsDirectory
+)
+$ArtifactsDirectory
