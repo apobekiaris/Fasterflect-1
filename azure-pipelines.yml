@@ -39,3 +39,4 @@ steps:
     ScriptType: 'FilePath'
     ScriptPath: 'test.ps1'
     azurePowerShellVersion: 'LatestVersion'
+    ScriptArguments: '$(Build.ArtifactStagingDirectory)'
