@@ -33,10 +33,9 @@ steps:
   inputs:
     Contents: '**/*.nupkg'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-- task: NuGetCommand@2
+- task: AzurePowerShell@4
   inputs:
-    allowPackageConflicts: true
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'Nuget.org'
+    azureSubscription: 'Visual Studio Enterprise (b48a609a-17f6-4e48-a317-54ab77fbf822)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'test.ps1'
+    azurePowerShellVersion: 'LatestVersion'
